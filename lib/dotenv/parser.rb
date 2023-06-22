@@ -46,6 +46,7 @@ module Dotenv
     def call
       # Convert line breaks to same format
       lines = @string.gsub(/\r\n?/, "\n")
+      lines = lines.split.join("\n")
       # Process matches
       lines.scan(LINE).each do |key, value|
         @hash[key] = parse_value(value || "")
