@@ -38,7 +38,8 @@ module Dotenv
     # This will get called during the `before_configuration` callback, but you
     # can manually call `Dotenv::Railtie.load` if you needed it sooner.
     def load
-      Dotenv.load(*dotenv_files)
+      # Dotenv.load(*dotenv_files)
+      Dotenv.overload(*dotenv_files)
     end
 
     # Public: Reload dotenv
