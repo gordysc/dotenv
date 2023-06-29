@@ -72,8 +72,7 @@ module Dotenv
       # Remove surrounding quotes
       value = value.strip.sub(/\A(['"])(.*)\1\z/m, '\2')
       maybe_quote = Regexp.last_match(1)
-      value = unescape_value(value, maybe_quote)
-      perform_substitutions(value, maybe_quote)
+      unescape_value(value, maybe_quote)
     end
 
     def unescape_characters(value)
